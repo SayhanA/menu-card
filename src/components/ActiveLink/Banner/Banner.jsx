@@ -1,7 +1,6 @@
-import { FaBookmark } from "react-icons/fa";
 
 const Banner = ({ name, text }) => {
-  console.log(text)
+  // console.log(text)
   return (
     <div className="">
       {/* <FaBookmark className="text-yellow-300 text-[40px] rotate-90 absolute" /> */}

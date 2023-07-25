@@ -1,24 +1,26 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./NavBar.css";
 import { Link, useLocation } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
+import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 
 const NavBar = () => {
-    const [item, setItem] = useState(0)
-    
-  // TODO:
-  const user = true;
+  const [item, setItem] = useState(0);
+
+  const { user, newItem, removedItem } = useContext(AuthContext);
+  // console.log(user, setNewItem)
 
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-    useEffect(() => {
-        const getList = localStorage.getItem("ordered_meals");
-        let items = Object?.keys(JSON?.parse(getList))?.length
-        console.log("items:",items)
-        setItem(items)
-
-    } ,[])
+  useEffect(() => {
+    const getList = localStorage.getItem("ordered_meals");
+    if (getList) {
+      let items = Object?.keys(JSON?.parse(getList))?.length;
+      // console.log("items:", items);
+      setItem(items);
+    }
+  }, [newItem, removedItem]);
 
   // <div className={`md:w-11/12 lg:px-5 mx-auto navbar bg-transparent absolute left-[50%] translate-x-[-50%] z-20 flex md:gap-5`}></div>
 

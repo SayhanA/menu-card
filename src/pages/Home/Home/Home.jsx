@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import { useContext, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import Banner from "../../../components/ActiveLink/Banner/Banner";
 import BannerTail from "../../../components/ActiveLink/Banner/BannerTail";
 import { addToDb } from "../../../../fakedb";
+import { AuthContext } from "../../../provider/AuthProvider/AuthProvider";
 
 const Home = () => {
   const [Inter, setInter] = useState(false);
-  console.log(Inter);
+  // console.log(Inter);
+  
+  const { setNewItem } = useContext(AuthContext);
 
   const addItem = (id) => {
     addToDb(id);
+    setNewItem(id);
   };
+
+  // addItem("menu")
 
   return (
     <div>
@@ -42,7 +48,7 @@ const Home = () => {
                         mr.mini
                       </p>
                       <p
-                        onClick={() => addItem("MR.MINI")}
+                        onClick={() => addItem("MR.MINI/70")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300"
                       >
                         70TK
@@ -62,13 +68,13 @@ const Home = () => {
                         mr.moderate
                       </p>
                       <p
-                        onClick={() => addItem("MR.moderate-chicken")}
+                        onClick={() => addItem("MR.moderate-chicken/170")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300 group-hover:mr-2"
                       >
                         170TK
                       </p>
                       <p
-                        onClick={() => addItem("MR.moderate-meet")}
+                        onClick={() => addItem("MR.moderate-meet/180")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300"
                       >
                         180TK
@@ -85,13 +91,13 @@ const Home = () => {
                         mr.perfect
                       </p>
                       <p
-                        onClick={() => addItem("MR.perfect-chicken")}
+                        onClick={() => addItem("MR.perfect-chicken/190")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300 group-hover:mr-2"
                       >
                         190TK
                       </p>
                       <p
-                        onClick={() => addItem("MR.perfect-meet")}
+                        onClick={() => addItem("MR.perfect-meet/200")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300"
                       >
                         200TK
@@ -109,7 +115,7 @@ const Home = () => {
                         mr.hot chick
                       </p>
                       <p
-                        onClick={() => addItem("MR.hot chick")}
+                        onClick={() => addItem("MR.hot chick/190")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300"
                       >
                         190TK
@@ -150,13 +156,13 @@ const Home = () => {
                         mr.naga
                       </p>
                       <p
-                        onClick={() => addItem("MR.naga-chicken")}
+                        onClick={() => addItem("MR.naga-chicken/170")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300 group-hover:mr-2"
                       >
                         170TK
                       </p>
                       <p
-                        onClick={() => addItem("MR.naga-meet")}
+                        onClick={() => addItem("MR.naga-meet/180")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300"
                       >
                         180TK
@@ -174,13 +180,13 @@ const Home = () => {
                         mr.baclon <span className="text-sm">and</span> co.
                       </p>
                       <p
-                        onClick={() => addItem("MR.baclon-chicken")}
+                        onClick={() => addItem("MR.baclon-chicken/190")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300 group-hover:mr-2"
                       >
                         190TK
                       </p>
                       <p
-                        onClick={() => addItem("MR.baclon-meet")}
+                        onClick={() => addItem("MR.baclon-meet/200")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300"
                       >
                         200TK
@@ -197,13 +203,13 @@ const Home = () => {
                         mr.sausage <span className="text-sm">and</span> co.
                       </p>
                       <p
-                        onClick={() => addItem("MR.sausage-chicken")}
+                        onClick={() => addItem("MR.sausage-chicken/190")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300 group-hover:mr-2"
                       >
                         190TK
                       </p>
                       <p
-                        onClick={() => addItem("MR.sausage-meet")}
+                        onClick={() => addItem("MR.sausage-meet/200")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300"
                       >
                         200TK
@@ -221,13 +227,13 @@ const Home = () => {
                         mr.cheeseroom
                       </p>
                       <p
-                        onClick={() => addItem("MR.cheeseroom-chicken")}
+                        onClick={() => addItem("MR.cheeseroom-chicken/190")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300 group-hover:mr-2"
                       >
                         190TK
                       </p>
                       <p
-                        onClick={() => addItem("MR.cheeseroom-meet")}
+                        onClick={() => addItem("MR.cheeseroom-meet/200")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300"
                       >
                         200TK
@@ -245,13 +251,13 @@ const Home = () => {
                         mr.handy man
                       </p>
                       <p
-                        onClick={() => addItem("MR.handy-chicken")}
+                        onClick={() => addItem("MR.handy-chicken/190")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300 group-hover:mr-2"
                       >
                         190TK
                       </p>
                       <p
-                        onClick={() => addItem("MR.handy-meet")}
+                        onClick={() => addItem("MR.handy-meet/200")}
                         className="w-[80px] text-center font-bold text-yellow-300 mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300"
                       >
                         200TK
@@ -303,7 +309,7 @@ const Home = () => {
                     with jolopona. Sanford on a BRIOCHE SUNI-DELIGHISOME*
                   </p>
                   <button
-                    onClick={() => addItem("MR.meaty dealear")}
+                    onClick={() => addItem("MR.meaty dealear/310")}
                     className="group-hover:flex hidden btn btn-outline normal-case text-yellow-300 border-yellow-300 transition-all ease-in-out"
                   >
                     Order Now <BsArrowRight className="text-xl" />{" "}
@@ -336,7 +342,7 @@ const Home = () => {
                     with jolopona. Sanford on a BRIOCHE SUNI-DELIGHISOME*
                   </p>
                   <button
-                    onClick={() => addItem("MR.cowboy")}
+                    onClick={() => addItem("MR.cowboy/340")}
                     className="group-hover:flex hidden btn btn-outline normal-case text-yellow-300 border-yellow-300 transition-all ease-in-out"
                   >
                     Order Now <BsArrowRight className="text-xl" />{" "}
@@ -368,7 +374,7 @@ const Home = () => {
                     with jolopona. Sanford on a BRIOCHE SUNI-DELIGHISOME*
                   </p>
                   <button
-                    onClick={() => addItem("MR.son of a bun")}
+                    onClick={() => addItem("MR.son of a bun/330")}
                     className="group-hover:flex hidden btn btn-outline normal-case text-yellow-300 border-yellow-300 transition-all ease-in-out"
                   >
                     Order Now <BsArrowRight className="text-xl" />{" "}
@@ -400,7 +406,7 @@ const Home = () => {
                     with jolopona. Sanford on a BRIOCHE SUNI-DELIGHISOME*
                   </p>
                   <button
-                    onClick={() => addItem("MR.big boppa")}
+                    onClick={() => addItem("MR.big boppa/380")}
                     className="group-hover:flex hidden btn btn-outline normal-case text-yellow-300 border-yellow-300 transition-all ease-in-out"
                   >
                     Order Now <BsArrowRight className="text-xl" />{" "}
@@ -426,7 +432,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 0 ? (
                   <p
-                    onClick={() => addItem("Chicken/Beef Patty")}
+                    onClick={() => addItem("Chicken-Beef Patty/100")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -448,7 +454,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 1 ? (
                   <p
-                    onClick={() => addItem("beef bacon")}
+                    onClick={() => addItem("beef bacon/60")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -470,7 +476,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 2 ? (
                   <p
-                    onClick={() => addItem("cheese")}
+                    onClick={() => addItem("cheese/25")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -492,7 +498,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 3 ? (
                   <p
-                    onClick={() => addItem("pepperoni")}
+                    onClick={() => addItem("pepperoni/50")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -514,7 +520,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 4 ? (
                   <p
-                    onClick={() => addItem("mushrooms")}
+                    onClick={() => addItem("mushrooms/50")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -536,7 +542,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 5 ? (
                   <p
-                    onClick={() => addItem("pickle")}
+                    onClick={() => addItem("pickle/20")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -558,7 +564,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 6 ? (
                   <p
-                    onClick={() => addItem("jalapeno")}
+                    onClick={() => addItem("jalapeno/20")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -579,7 +585,7 @@ const Home = () => {
                   sausage
                 </p>
                 {Inter === true - 7 ? (
-                  <p className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn">
+                  <p onClick={() => addItem("sausage/20")} className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn">
                     Order
                   </p>
                 ) : (
@@ -599,7 +605,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 8 ? (
                   <p
-                    onClick={() => addItem("coleslaw")}
+                    onClick={() => addItem("coleslaw/40")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -621,7 +627,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 9 ? (
                   <p
-                    onClick={() => addItem("egg")}
+                    onClick={() => addItem("egg/25")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -648,7 +654,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 10 ? (
                   <p
-                    onClick={() => addItem("honey mustered")}
+                    onClick={() => addItem("honey mustered/20")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -670,7 +676,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 11 ? (
                   <p
-                    onClick={() => addItem("naga")}
+                    onClick={() => addItem("naga/20")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -692,7 +698,7 @@ const Home = () => {
                 </p>
                 {Inter === true - 12 ? (
                   <p
-                    onClick={() => addItem("BBq")}
+                    onClick={() => addItem("BBq/20")}
                     className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn"
                   >
                     Order
@@ -746,7 +752,7 @@ const Home = () => {
                 >
                   {Inter === true - 13 ? (
                     <p
-                      onClick={() => addItem("choco cold coffee-regular")}
+                      onClick={() => addItem("choco cold coffee-regular/70")}
                       className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn normal-case ml-auto"
                     >
                       Order
@@ -763,7 +769,7 @@ const Home = () => {
                 >
                   {Inter === true - 14 ? (
                     <p
-                      onClick={() => addItem("choco cold coffee-large")}
+                      onClick={() => addItem("choco cold coffee-large/120")}
                       className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn normal-case"
                     >
                       Order
@@ -787,7 +793,7 @@ const Home = () => {
                 >
                   {Inter === true - 16 ? (
                     <p
-                      onClick={() => addItem("strawaberry shakes-regular")}
+                      onClick={() => addItem("strawaberry shakes-regular/70")}
                       className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn normal-case ml-auto"
                     >
                       Order
@@ -804,7 +810,7 @@ const Home = () => {
                 >
                   {Inter === true - 17 ? (
                     <p
-                      onClick={() => addItem("strawaberry shakes-large")}
+                      onClick={() => addItem("strawaberry shakes-large/120")}
                       className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn normal-case"
                     >
                       Order
@@ -828,7 +834,7 @@ const Home = () => {
                 >
                   {Inter === true - 15 ? (
                     <p
-                      onClick={() => addItem("coke/sprite/fanta")}
+                      onClick={() => addItem("coke-sprite-fanta/20")}
                       className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn normal-case ml-auto"
                     >
                       Order
@@ -858,7 +864,7 @@ const Home = () => {
                 >
                   {Inter === true - 18 ? (
                     <p
-                      onClick={() => addItem("mineral water")}
+                      onClick={() => addItem("mineral water/15")}
                       className="btn btn-outline text-yellow-300 border-l-2 border-yellow-300 text-end mr-2 hover:btn normal-case ml-auto"
                     >
                       Order
@@ -895,7 +901,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       smoked chicken
                     </p>
-                    <p onClick={() => addItem("smoked chicken")} className="w-[80px] text-xl text-center font-bold text-white mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("smoked chicken/190")} className="w-[80px] text-xl text-center font-bold text-white mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       190TK
                     </p>
                   </div>
@@ -907,7 +913,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       chicken sub
                     </p>
-                    <p onClick={() => addItem("chicken sub")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("chicken sub/180")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       180TK
                     </p>
                   </div>
@@ -919,7 +925,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       chicken mushrooms sub
                     </p>
-                    <p onClick={() => addItem("chicken mushrooms sub")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("chicken mushrooms sub/210")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       210TK
                     </p>
                   </div>
@@ -940,7 +946,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       chicken lollipops
                     </p>
-                    <p onClick={() => addItem("chicken lollipops")} className="w-[80px] text-xl text-center font-bold text-white mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("chicken lollipops/70")} className="w-[80px] text-xl text-center font-bold text-white mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       70TK
                     </p>
                   </div>
@@ -954,7 +960,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       buffalo chicken wings
                     </p>
-                    <p onClick={() => addItem("buffalo chicken wings")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("buffalo chicken wings/70")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       70TK
                     </p>
                   </div>
@@ -968,7 +974,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       naga wings
                     </p>
-                    <p onClick={() => addItem("naga wings")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("naga wings/70")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       70TK
                     </p>
                   </div>
@@ -982,7 +988,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       crispy wings
                     </p>
-                    <p onClick={() => addItem("crispy wings")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("crispy wings/70")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       70TK
                     </p>
                   </div>
@@ -996,7 +1002,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       honey garlic wings
                     </p>
-                    <p onClick={() => addItem("honey garlic wings")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("honey garlic wings/70")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       70TK
                     </p>
                   </div>
@@ -1019,7 +1025,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       fried rices
                     </p>
-                    <p onClick={() => addItem("fried rices")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("fried rices/120")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       120TK
                     </p>
                   </div>
@@ -1030,7 +1036,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       cheesy nuggets
                     </p>
-                    <p onClick={() => addItem("cheesy nuggets")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("cheesy nuggets/150")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       150TK
                     </p>
                   </div>
@@ -1042,7 +1048,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       garlic mushrooms
                     </p>
-                    <p onClick={() => addItem("garlic mushrooms")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("garlic mushrooms/250")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       250TK
                     </p>
                   </div>
@@ -1053,7 +1059,7 @@ const Home = () => {
                     <p className="text-xl font-bold text-yellow-300 uppercase flex-grow">
                       Loaded Fries
                     </p>
-                    <p onClick={() => addItem("Loaded Fries")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
+                    <p onClick={() => addItem("Loaded Fries/250")} className="w-[80px] text-center font-bold text-white text-xl mt-auto group-hover:btn group-hover:btn-outline group-hover:border-yellow-300 group-hover:text-yellow-300">
                       250TK
                     </p>
                   </div>
@@ -1067,6 +1073,7 @@ const Home = () => {
           </div>
         </section>
       </div>
+      
     </div>
   );
 };
